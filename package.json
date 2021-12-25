@@ -24,7 +24,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "react-scripts test --env=jsdom --coverage --watchAll=false"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/reportWebVitals.ts",
+      ".*/index.ts",
+      ".*/types.ts"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -49,8 +57,11 @@
     "@types/enzyme": "^3.10.10",
     "@types/react-redux": "^7.1.20",
     "@types/redux": "^3.6.0",
+    "@types/redux-mock-store": "^1.0.3",
     "@types/redux-thunk": "^2.1.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
-    "enzyme": "^3.11.0"
+    "axios-mock-adapter": "^1.20.0",
+    "enzyme": "^3.11.0",
+    "redux-mock-store": "^1.5.4"
   }
 }

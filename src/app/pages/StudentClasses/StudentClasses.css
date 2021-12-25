@@ -1,0 +1,19 @@
+.student_classes_page_header{
+  height: 3rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.student_classes_page_main{
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.student_classes_page_footer{
+  width: 100vw;
+  height: 1rem;
+}

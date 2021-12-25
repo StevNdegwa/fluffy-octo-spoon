@@ -1,0 +1,14 @@
+.home_wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error_message {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  padding-left: 1rem;
+}
