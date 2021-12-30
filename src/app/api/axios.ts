@@ -12,4 +12,4 @@ axios.interceptors.request.use(
 
 axios.defaults.baseURL = "https://api.airtable.com/v0/app8ZbcPx7dkpOnP0/";
 
-export default axios;
+export { axios };

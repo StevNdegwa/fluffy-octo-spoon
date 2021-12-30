@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { getClassesByIDs, getStudentClasses, getStudentNamesByID } from "../../api/airtable";
+import { AirtableAPI } from "../../api";
 import { FetchError } from "../types";
 import { StudentIDMapType, IStudentClass } from "../../types";
 
@@ -24,16 +24,16 @@ export function fetchStudentClasses(name: string) {
     dispatch(fetchStudentClassesError(null));
 
     try {
-      let classIDs = await getStudentClasses(name);
+      let classIDs = await AirtableAPI.getStudentClasses(name);
 
-      let classeDetails = await getClassesByIDs(classIDs);
+      let classeDetails = await AirtableAPI.getClassesByIDs(classIDs);
 
       if (classeDetails) {
         dispatch(setStudentClasses(classeDetails));
 
         let studentIds = classeDetails.map((detail) => detail.Students).flat();
 
-        let studentsMap = await getStudentNamesByID(studentIds);
+        let studentsMap = await AirtableAPI.getStudentNamesByID(studentIds);
 
         if (studentsMap)
           dispatch(setStudentsNamesMap(studentsMap));

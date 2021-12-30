@@ -1,5 +1,5 @@
-import axios from "./axios";
-import { getStudentClasses, getClassesByIDs, getStudentNamesByID } from "./airtable";
+import { axios } from "./axios";
+import { AirtableAPI } from "./airtable";
 
 jest.mock("axios");
 
@@ -11,7 +11,8 @@ let classes = [
     "recoQBxwU83QJq69L",
     "recDImTGoac20jjl6",
     "rec7JYre5lzaHXTTu",
-  ];
+  ],
+  { getStudentClasses, getClassesByIDs, getStudentNamesByID } = AirtableAPI;
 
 describe("test getStudentClasses", () => {
 
